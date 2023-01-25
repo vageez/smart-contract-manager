@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import abi from '../abi/IliosToken'
 
-export const useAppStore = create((set) => ({
+export const useAppStore = create((set, get) => ({
   decimals: undefined,
   fetchDecimals: async () => {
     const decimals = await window.myContract.decimals()
@@ -10,7 +10,8 @@ export const useAppStore = create((set) => ({
   },
   tokenName: undefined,
   tokenSymbol: undefined,
-  contractAddress: '0x5fbdb2315678afecb367f032d93f642f64180aa3',
+  //contractAddress: '0x6ca69103eBFf66949df9C994116F09Af350Ed875', // GOERLI
+  contractAddress: '0x5fbdb2315678afecb367f032d93f642f64180aa3', // LOCAL NODE
   contractLoaded: false,
   setContractLoaded: () => set({ contractLoaded: true }),
   abi: abi,
@@ -57,10 +58,125 @@ export const useAppStore = create((set) => ({
   setBalanceOfAddress: (evt) => set({ balanceOfAddress: evt.target.value }),
   balance: undefined,
   balanceOf: async (balanceOfAddress) => {
-    console.log('BALANCE OF', balanceOfAddress)
     // Never returns
     const response = await window.myContract.balanceOf(balanceOfAddress)
     console.log('BALANCE OF response', response)
     set({ balance: response.toNumber() })
+  },
+  roles: {
+    MINTER: undefined,
+    DEFAULT_ADMIN_ROLE: undefined,
+    PAUSER_ROLE: undefined,
+  },
+  addressRoles: undefined,
+  setAddressRoles: (evt) => set({ addressRoles: evt.target.value }),
+  rolesForAddress: {
+    MINTER: undefined,
+    DEFAULT_ADMIN_ROLE: undefined,
+    PAUSER_ROLE: undefined,
+  },
+  getRolesForAddress: async () => {
+    // const minterRole = await window.myContract.MINTER_ROLE()
+    // const defaultAdminRole = await window.myContract.DEFAULT_ADMIN_ROLE()
+    // const pauserRole = await window.myContract.PAUSER_ROLE()
+    const hasMinterRole = await window.myContract.hasRole(
+      get().MINTER_ROLE,
+      get().addressRoles,
+    )
+    const hasDefaultAdminRole = await window.myContract.hasRole(
+      get().DEFAULT_ADMIN_ROLE,
+      get().addressRoles,
+    )
+    const hasPauserRole = await window.myContract.hasRole(
+      get().PAUSER_ROLE,
+      get().addressRoles,
+    )
+    set({
+      rolesForAddress: {
+        MINTER: hasMinterRole,
+        DEFAULT_ADMIN_ROLE: hasDefaultAdminRole,
+        PAUSER_ROLE: hasPauserRole,
+      },
+    })
+  },
+  getRoles: async () => {
+    // const minterRole = await window.myContract.MINTER_ROLE()
+    // const defaultAdminRole = await window.myContract.DEFAULT_ADMIN_ROLE()
+    // const pauserRole = await window.myContract.PAUSER_ROLE()
+    const hasMinterRole = await window.myContract.hasRole(
+      get().MINTER_ROLE,
+      get().signerAddress,
+    )
+    const hasDefaultAdminRole = await window.myContract.hasRole(
+      get().DEFAULT_ADMIN_ROLE,
+      get().signerAddress,
+    )
+    const hasPauserRole = await window.myContract.hasRole(
+      get().PAUSER_ROLE,
+      get().signerAddress,
+    )
+    set({
+      roles: {
+        MINTER: hasMinterRole,
+        DEFAULT_ADMIN_ROLE: hasDefaultAdminRole,
+        PAUSER_ROLE: hasPauserRole,
+      },
+    })
+  },
+  grantRoleAddress: undefined,
+  grantRoleRole: [
+    { id: 'MINTER_ROLE', selected: false, value: undefined },
+    { id: 'PAUSER_ROLE', selected: false, value: undefined },
+    { id: 'DEFAULT_ADMIN_ROLE', selected: false, value: undefined },
+  ],
+  setGrantRoleRole: (value) =>
+    set((prevState) => ({
+      grantRoleRole: prevState.grantRoleRole.map((role) => ({
+        ...role,
+        selected: role.value === value,
+      })),
+    })),
+  MINTER_ROLE: undefined,
+  PAUSER_ROLE: undefined,
+  DEFAULT_ADMIN_ROLE: undefined,
+  getAllRolesHexs: async () => {
+    const minterRole = await window.myContract.MINTER_ROLE()
+
+    const pauserRole = await window.myContract.PAUSER_ROLE()
+
+    const defaultAdminRole = await window.myContract.DEFAULT_ADMIN_ROLE()
+
+    const map = {
+      MINTER_ROLE: minterRole,
+      PAUSER_ROLE: pauserRole,
+      DEFAULT_ADMIN_ROLE: defaultAdminRole,
+    }
+
+    set((prevState) => ({
+      MINTER_ROLE: minterRole,
+      PAUSER_ROLE: pauserRole,
+      DEFAULT_ADMIN_ROLE: defaultAdminRole,
+      grantRoleRole: prevState.grantRoleRole.map((role) => ({
+        ...role,
+        value: map[role.id],
+      })),
+    }))
+    get().getRoles()
+  },
+  setGrantRoleAddress: (evt) => set({ grantRoleAddress: evt.target.value }),
+  grantRole: async () => {
+    const role = get().grantRoleRole.reduce(
+      (a, c) => (a = c.selected ? c.value : a),
+      undefined,
+    )
+
+    if (role) {
+      const response = await window.myContract.grantRole(
+        role,
+        get().grantRoleAddress,
+      )
+      // Apply TOAST to see JSON response
+      return response
+    }
   },
 }))
