@@ -1,4 +1,4 @@
-# Sample Hardhat Project
+# ETH Smart Contract Hardhat Project
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
@@ -7,6 +7,10 @@ Try running some of the following tasks:
 # BIG INT CONVERSION
 
 https://docs.ethers.org/v5/api/utils/bignumber/#BigNumber--BigNumber--methods--conversion
+
+# ETH address generator
+
+https://vanity-eth.tk/
 
 # SOME COMMANDS
 
@@ -41,7 +45,9 @@ npx hardhat run scripts/deploy.js
 
    root> npx hardhat run scripts/deploy-ilios.js --network localhost
 
-   - Deploy copntract to local network
+   - Deploy contract to local network
 
 3. RUN WEB APP
    web-app> npm start
+
+4. ERRORS WHEN EXECUTING - When working in development MetaMask(Settings > Advanced), resetting account is necessary, otherwise NONCE does not add up.

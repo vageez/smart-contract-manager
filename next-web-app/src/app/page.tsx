@@ -1,5 +1,4 @@
 import { TokenManager } from '../components/TokenManager'
-
 export default function Home() {
   return (
     <>
