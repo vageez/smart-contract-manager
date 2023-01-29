@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react'
 import { ethers } from 'ethers'
 import { useAppStore } from './useAppStore'

@@ -1,15 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { useEffect, useState } from 'react'
 import { useAppStore } from './useAppStore'
 import { ethers } from 'ethers'
-
-//   Approval(address,address,uint256)
-//   Paused(address)
-//   RoleAdminChanged(bytes32,bytes32,bytes32)
-//   RoleGranted(bytes32,address,address)
-//   RoleRevoked(bytes32,address,address)
-//   Transfer(address,address,uint256)
-//   Unpaused(address)
 
 export const useEventListener = () => {
   const [txs, setTxs] = useState()

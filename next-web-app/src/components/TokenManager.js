@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import React, { useEffect } from 'react'
 import { useAppStore } from '../hooks/useAppStore'
@@ -280,7 +281,11 @@ export const TokenManager = () => {
                 </label>
                 <select onChange={(e) => setGrantRoleRole(e.target.value)}>
                   {grantRoleRole.map((role) => (
-                    <option selected={role.selected} value={role.value}>
+                    <option
+                      key={role.id}
+                      selected={role.selected}
+                      value={role.value}
+                    >
                       {role.id}
                     </option>
                   ))}
