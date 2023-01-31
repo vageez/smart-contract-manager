@@ -11,7 +11,7 @@ export const useEventListener = () => {
   console.log(
     'useEvent',
     process.env.NEXT_PUBLIC_HTTPS,
-    process.env.NEXT_PUBLIC_APIKEY,
+    process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
   )
   const provider = new ethers.providers.JsonRpcBatchProvider(
     process.env.NEXT_PUBLIC_HTTPS,

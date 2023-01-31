@@ -6,9 +6,6 @@ import { useMetaMask } from '../hooks/useMetaMask'
 import { useEventListener } from '../hooks/useEventListener'
 
 export const TokenManager = () => {
-  console.log(process.env.NEXT_PUBLIC_HTTPS)
-  console.log(process.env.NEXT_PUBLIC_WEBSOCKET)
-  console.log(process.env.APIKEY)
   const appStore = useAppStore((state) => state)
   const {
     tokenName,

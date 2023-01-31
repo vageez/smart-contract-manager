@@ -24,8 +24,10 @@ export const useAppStore = create(
     },
     tokenName: undefined,
     tokenSymbol: undefined,
-    //contractAddress: '0x6ca69103eBFf66949df9C994116F09Af350Ed875', // GOERLI
-    contractAddress: '0x5fbdb2315678afecb367f032d93f642f64180aa3', // LOCAL NODE
+    contractAddress: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+    // contractAddress: '0x29dd75aab2ea56b0633621705e64d4e6ecb87b98', // MAINNET
+    // contractAddress: '0x6ca69103eBFf66949df9C994116F09Af350Ed875', // GOERLI
+    // contractAddress: '0x5fbdb2315678afecb367f032d93f642f64180aa3', // LOCAL NODE
     contractLoaded: false,
     setContractLoaded: () => set({ contractLoaded: true }),
     abi: abi,
