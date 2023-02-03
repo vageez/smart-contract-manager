@@ -1,13 +1,11 @@
-import { TokenManager } from '../components/TokenManager'
+// import { TokenManager } from '../components/TokenManager'
 export default function Home() {
   return (
     <>
       <header className="m-10">
-        <h1>ERC 20 Token Manager</h1>
+        <h1>Ilios Token</h1>
       </header>
-      <main className="m-10">
-        <TokenManager />
-      </main>
+      <main className="m-10">{/* <TokenManager /> */}</main>
       <footer></footer>
     </>
   )
