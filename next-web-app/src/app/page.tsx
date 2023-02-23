@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <>
       <main className="m-10">
-        <div className="grid gap-2 grid-cols-2 grid-rows-7">
-          <div className="text-white flex flex-row flex-no-wrap justify-start items-center">
+        <div className="md:flex md:flex-row sm:flex-col flex-no-wrap justify-around">
+          <div className="text-white flex flex-row flex-no-wrap justify-start items-center m:w-6/12 sm:w-full">
             <div className="leading-loose">
               <div className="text-4xl mb-8">
                 <span>Join the green movement with Ilios Tokens - </span>{' '}
@@ -21,7 +21,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div>
+          <div className="m:w-6/12 sm:w-full">
             <Image
               className="block"
               src="/images/image-01.png"

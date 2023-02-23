@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,6 +8,17 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      ...defaultTheme.screens,
+      tablet: { max: '639px' },
+      // => @media (max-width: 640px) { ... }
+
+      laptop: { max: '1024px' },
+      // => @media (max-width: 1024px) { ... }
+
+      desktop: { max: '1280px' },
+      // => @media (max-width: 1280px) { ... }
+    },
     extend: {
       colors: {
         mainbg: '#021017',

@@ -23,7 +23,7 @@ export default function RootLayout({
             width="111"
             height="89"
           />
-          <nav>
+          <nav className="tablet:hidden">
             <ul
               className="list-none text-white"
             >
@@ -32,8 +32,6 @@ export default function RootLayout({
               <li className='inline'>Team</li>
               <li className='inline text-gray-700 mx-2.5'>{' '}/{' '}</li>
               <li className='inline'>Community</li>
-              <li className='inline text-gray-700 mx-2.5'>{' '}/{' '}</li>
-              <li className='inline'>FAQ</li>
             </ul>
           </nav>
           {/* <button className="w-64 h-16 bg-white rounded-full text-color1"></button> */}
