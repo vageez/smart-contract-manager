@@ -1,12 +1,37 @@
-// import { TokenManager } from '../components/TokenManager'
+import Image from 'next/image'
+
 export default function Home() {
   return (
     <>
-      <header className="m-10 b-1">
-        <h1>Ilios Token</h1>
-      </header>
       <main className="m-10">
-        <ul className="list-disc md:list-disc">
+        <div className="grid gap-2 grid-cols-2 grid-rows-7">
+          <div className="text-white flex flex-row flex-no-wrap justify-start items-center">
+            <div className="leading-loose">
+              <div className="text-4xl mb-8">
+                <span>Join the green movement with Ilios Tokens - </span>{' '}
+                <span className="text-yellow">
+                  earn rewards, make a difference.
+                </span>
+              </div>
+              <div className="mb-8" >
+                Ilios Tokens incentivizes green initiatives by rewarding participants with tokens, promoting sustainability and environmentally conscious practices. The brand aims to drive growth in sustainable practices and encourage investment in green initiatives.
+              </div>
+              <a href="https://www.instagram.com/iliostoken/" className="px-9 py-4 w-64 h-16 bg-yellow rounded-full text-color1">
+                Connect with us
+              </a>
+            </div>
+          </div>
+          <div>
+            <Image
+              className="block"
+              src="/images/image-01.png"
+              alt="Ilios Token"
+              width="782"
+              height="752"
+            />
+          </div>
+        </div>
+        {/* <ul className="list-disc md:list-disc grid gap-2 grid-cols-2 grid-rows-7">
           <li>
             Token for Pre-IPO Swap of Ilios ESG Labs (working name): Ilios Token
             will serve as a pre-IPO swap option for the Ilios ESG Labs (working
@@ -73,7 +98,7 @@ export default function Home() {
           also provide new token projects with access to the resources and
           support offered by the Ilios ecosystem, further contributing to their
           growth and success.
-        </ul>
+        </ul> */}
       </main>
       <footer></footer>
     </>
