@@ -10,6 +10,7 @@ export default function Head() {
         src="https://www.livecoinwatch.com/static/lcw-widget.js"
         strategy='lazyOnload'
       />
+      <Script src="https://cdn.logwork.com/widget/countdown.js" strategy='lazyOnload' />
     </>
   )
 }
