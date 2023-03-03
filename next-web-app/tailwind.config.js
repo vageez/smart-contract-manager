@@ -17,6 +17,7 @@ module.exports = {
       // => @media (max-width: 1024px) { ... }
 
       desktop: { max: '1280px' },
+      xldesktop: { min: '1281px' },
       // => @media (max-width: 1280px) { ... }
     },
     extend: {
