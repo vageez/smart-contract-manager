@@ -102,8 +102,7 @@ export default function Home() {
           <div className=" md:w-6/12 xl:w-4/12 sm:w-full hidden md:block">
             <Image
               className="block"
-              // src="/images/image-03.png"
-              src="/images/IMG_1.png"
+              src="/images/IMG_1.PNG"
               alt="Ilios Token"
               width="1122"
               height="777"
