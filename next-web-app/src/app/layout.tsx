@@ -37,6 +37,8 @@ export default function RootLayout({
               <li className='inline'><Link href='/governance'>Governance</Link></li>
               <li className='inline text-gray-700 mx-2.5'>{' '}/{' '}</li>
               <li className='inline'><Link href='/white-paper'>White Paper</Link></li>
+              <li className='inline text-gray-700 mx-2.5'>{' '}/{' '}</li>
+              <li className='inline'><Link href='/contact'>Contact Us</Link></li>
             </ul>
           </nav>
           {/* <a href="https://www.instagram.com/iliostoken/" className="px-9 py-4 bg-white rounded-full text-color1">

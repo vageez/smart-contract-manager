@@ -14,7 +14,7 @@ export default function Contact() {
   const [emailSent, setEmailSent] = useState(false)
   const submit = () => {
     if (name && email && message) {
-      // TODO - send mail
+      // send mail
       const serviceId = 'service_x1nfuht'
       const templateId = 'template_kqtouqf'
       const userId = 'fWr-9aee-87hhbco-'
