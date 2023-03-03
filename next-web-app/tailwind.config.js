@@ -10,15 +10,10 @@ module.exports = {
   theme: {
     screens: {
       ...defaultTheme.screens,
-      tablet: { max: '639px' },
-      // => @media (max-width: 640px) { ... }
-
+      tablet: { max: '767px' },
       laptop: { max: '1024px' },
-      // => @media (max-width: 1024px) { ... }
-
       desktop: { max: '1280px' },
       xldesktop: { min: '1281px' },
-      // => @media (max-width: 1280px) { ... }
     },
     extend: {
       colors: {

@@ -17,8 +17,8 @@ export default function RootLayout({
       <head />
       <body className="bg-mainbg font-[Roboto]">
         <Ticker />
-        <div className="absolute bottom-0 right-0 h-64 w-96 bg-gradientbg bg-blur"></div>
-        <header className="m-10 b-1 flex justify-between items-center mb-11">
+        <div className="absolute bottom-0 right-0 h-64 w-96 bg-gradientbg bg-blur -z-10"></div>
+        <header className="m-10 b-1 justify-between items-center mb-11 md:flex md:flex-row sm:flex-col gap-y-2">
           <Link href='/'>
             <Image
               className="block"
@@ -28,7 +28,7 @@ export default function RootLayout({
               height="89"
             />
           </Link>
-          <nav className="tablet:hidden">
+          <nav className="tablet:mt-8">
             <ul
               className="list-none text-white"
             >
@@ -37,8 +37,6 @@ export default function RootLayout({
               <li className='inline'><Link href='/governance'>Governance</Link></li>
               <li className='inline text-gray-700 mx-2.5'>{' '}/{' '}</li>
               <li className='inline'><Link href='/white-paper'>White Paper</Link></li>
-              {/*<li className='inline text-gray-700 mx-2.5'>{' '}/{' '}</li>
-              <li className='inline'>Community</li> */}
             </ul>
           </nav>
           {/* <a href="https://www.instagram.com/iliostoken/" className="px-9 py-4 bg-white rounded-full text-color1">
