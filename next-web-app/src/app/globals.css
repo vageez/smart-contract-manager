@@ -18,3 +18,13 @@
 .white-paper p {
   font-size: 14px;
 }
+
+.governance h1 {
+  font-size: 20px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.governance p {
+  font-size: 14px;
+}

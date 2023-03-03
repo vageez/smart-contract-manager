@@ -2,8 +2,9 @@
 export default function Governance() {
   return (
     <>
-      <main className="m-10 xl:m-40 text-white">
-        <div>
+      <main className="m-10 xl:m-40 text-white governance">
+        <h1>Governance</h1>
+        <p>
           The Ilios token uses a decentralized autonomous organization (DAO) as
           its governance structure, which means that token holders can
           participate in decision-making through a decentralized voting process.
@@ -32,7 +33,7 @@ export default function Governance() {
           Ilios project can create a governance structure that is resistant to
           manipulation and ensures that decisions are made in the best interests
           of all stakeholders.
-        </div>
+        </p>
       </main>
     </>
   )
