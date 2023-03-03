@@ -28,3 +28,41 @@
 .governance p {
   font-size: 14px;
 }
+
+.contact-form {
+  background-color: white;
+
+  margin: 20px;
+  height: 400px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.contact-form h1 {
+  font-size: 20px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.contact-form input {
+  border: 1px solid #d1d1d1;
+  padding: 5px;
+}
+.contact-form textarea {
+  border: 1px solid #d1d1d1;
+  padding: 5px;
+}
+.contact-form button {
+  border: 1px solid #d1d1d1;
+  background-color: rgb(83, 83, 230);
+  color: white;
+  padding: 15px;
+}
