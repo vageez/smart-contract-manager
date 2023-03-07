@@ -22,7 +22,7 @@ export default function RootLayout({
           <Link href='/'>
             <Image
               className="block"
-              src="/ilios-logo.png"
+              src="/ilios-logo-2.png"
               alt="Ilios Token"
               width="111"
               height="89"
