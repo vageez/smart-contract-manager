@@ -2,7 +2,7 @@
 export default function Governance() {
   return (
     <>
-      <main className="m-10 xl:m-40 text-white governance">
+      <main className="text-white governance">
         <h1>Governance</h1>
         <p>
           The Ilios token uses a decentralized autonomous organization (DAO) as

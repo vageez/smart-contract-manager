@@ -6,7 +6,7 @@ export default function Dashboard() {
       <header className="m-10">
         <h1>ERC 20 Token Manager</h1>
       </header>
-      <main className="m-10">
+      <main>
         <TokenManager />
       </main>
       <footer></footer>

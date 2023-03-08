@@ -39,31 +39,33 @@ export default function Contact() {
   }
 
   return (
-    <div className="contact-form">
-      <h1>Contact us</h1>
-      <input
-        type="text"
-        placeholder="Your Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="Your email address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <textarea
-        placeholder="Your message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      ></textarea>
-      <button onClick={submit}>Send Message</button>
-      <span>
-        {emailSent
-          ? 'Thank you for your message, we will be in touch in no time!'
-          : null}
-      </span>
-    </div>
+    <main>
+      <div className="contact-form">
+        <h1>Contact us</h1>
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="Your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <textarea
+          placeholder="Your message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        ></textarea>
+        <button onClick={submit}>Send Message</button>
+        <span>
+          {emailSent
+            ? 'Thank you for your message, we will be in touch in no time!'
+            : null}
+        </span>
+      </div>
+    </main>
   )
 }

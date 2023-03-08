@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <>
-      <main className="m-10 xl:m-40">
+      <main>
         <div className="md:flex md:flex-row sm:flex-col flex-no-wrap justify-around gap-6">
           <div className="text-white flex flex-row flex-no-wrap justify-start items-center md:w-6/12 xl:w-8/12 sm:w-full">
             <div className="leading-loose">

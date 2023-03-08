@@ -32,7 +32,6 @@
 .contact-form {
   background-color: white;
 
-  margin: 20px;
   height: 400px;
   padding: 20px;
 
@@ -65,4 +64,22 @@
   background-color: rgb(83, 83, 230);
   color: white;
   padding: 15px;
+}
+
+header {
+  margin: 20px auto 20px;
+  padding: 10px 50px;
+  max-width: 945px;
+}
+
+main {
+  margin: 20px auto 20px;
+  padding: 10px 50px;
+  max-width: 945px;
+}
+
+.countdown-timer {
+  width: 50% !important;
+  margin: 0 auto !important;
+  display: block !important;
 }

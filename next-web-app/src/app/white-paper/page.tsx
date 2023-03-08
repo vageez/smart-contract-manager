@@ -1,7 +1,7 @@
 export default function WhitePaper() {
   return (
     <>
-      <main className="m-10 xl:m-40 text-white white-paper">
+      <main className="text-white white-paper">
         <div>
           <h1>
             Ilios Token: Revolutionizing Sustainable and Environmentally

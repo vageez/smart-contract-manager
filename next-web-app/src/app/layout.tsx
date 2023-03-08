@@ -18,7 +18,8 @@ export default function RootLayout({
       <body className="bg-mainbg font-[Roboto]">
         <Ticker />
         <div className="absolute bottom-0 right-0 h-64 w-96 bg-gradientbg bg-blur -z-10"></div>
-        <header className="m-10 b-1 justify-between items-center mb-11 md:flex md:flex-row sm:flex-col gap-y-2">
+        {/* m-10 mb-11*/}
+        <header className="b-1 justify-between items-center mb-11 md:flex md:flex-row sm:flex-col gap-y-2">
           <Link href='/'>
             <Image
               className="block"
